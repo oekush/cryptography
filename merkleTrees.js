@@ -78,19 +78,19 @@ const data = [
     "data6", "data7", "data8", "data9", "data10", "data11"
 ];
 
-// // Hash the data using the SHA256 class
-// const sha256 = new SHA256();
-// const hashedData = data.map(d => sha256.hash(d));
+// Hash the data using the SHA256 class
+const sha256 = new SHA256();
+const hashedData = data.map(d => sha256.hash(d));
 
-// // Create the Merkle Tree
-// const merkleTree = new MerkleTree(hashedData);
-// const root = merkleTree.getRoot();
-// console.log("Merkle Root:", root);
+// Create the Merkle Tree
+const merkleTree = new MerkleTree(hashedData);
+const root = merkleTree.getRoot();
+console.log("Merkle Root:", root);
 
-// // Generate proof for a specific data (e.g., index 2)
-// const proof = merkleTree.getProof(2);
-// console.log("Proof for data3:", proof);
+// Generate proof for a specific data (e.g., index 2)
+const proof = merkleTree.getProof(2);
+console.log("Proof for data3:", proof);
 
-// // Verify the proof
-// const isValid = MerkleTree.verifyProof(hashedData[2], proof, root);
-// console.log("Is valid proof:", isValid);
+// Verify the proof
+const isValid = MerkleTree.verifyProof(hashedData[2], proof, root);
+console.log("Is valid proof:", isValid);
